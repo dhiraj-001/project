@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+/* =========================
+   THEME TOKENS
+========================= */
+
+:root {
+  --text: #a1a1aa;
+  --text-h: #ffffff;
+
+  --bg: #050505;
+  --bg-secondary: #0f0f12;
+  --card: rgba(24, 24, 27, 0.75);
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.14);
+
+  --accent: #818cf8;
+  --accent-soft: rgba(129, 140, 248, 0.12);
+
+  --purple: #c084fc;
+  --purple-soft: rgba(192, 132, 252, 0.12);
+
+  --success: #34d399;
+  --danger: #f87171;
+
+  --shadow:
+    0 10px 40px rgba(0, 0, 0, 0.45);
+
+  --sans:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --mono:
+    "JetBrains Mono",
+    ui-monospace,
+    SFMono-Regular,
+    monospace;
+
+  font-family: var(--sans);
+
+  color-scheme: dark;
+  color: var(--text);
+  background: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(129, 140, 248, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(192, 132, 252, 0.08),
+      transparent 30%
+    ),
+    var(--bg);
+
+  color: var(--text);
+}
+
+/* =========================
+   ROOT
+========================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--text-h);
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* =========================
+   CODE
+========================= */
+
+code {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+
+  background: rgba(255, 255, 255, 0.05);
+  color: #e4e4e7;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+  background: rgba(129, 140, 248, 0.3);
+  color: white;
+}
+
+/* =========================
+   GLASS EFFECT
+========================= */
+
+.glass {
+  background: rgba(24, 24, 27, 0.6);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  box-shadow: var(--shadow);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease forwards;
+}
+
+/* =========================
+   CHARTS
+========================= */
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-default-tooltip {
+  border-radius: 1rem !important;
+  overflow: hidden;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    font-size: 14px;
+  }
+}
